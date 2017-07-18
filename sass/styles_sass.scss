@@ -1,0 +1,244 @@
+$tipoTitulos: 'Roboto', sans-serif;
+$colorPrimario: bisque;
+$colorOscuro: dimgray;
+
+* {box-sizing: border-box; margin: 0; padding: 0;}
+html {font-size: 16px;}
+body {margin:0; font-family: 'Lato', sans-serif; color: #5e5e5e; box-sizing: border-box; background-color: #eeeeee;}
+h1, h2, h3, h4, h5, h6 {font-family: $tipoTitulos;}
+a {text-decoration: none;}
+.container {max-width: 960px; margin: 0 auto;}
+
+/*-----header-----*/
+header, footer {background-color:$colorPrimario; text-align: center; width: 100%;}
+@import "large/header-large";
+
+/*-----menu principal-----*/
+nav.menuPrincipal{
+  background-color:$colorOscuro;
+}
+
+nav.menuPrincipal ul {
+  list-style-type:none;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+
+}
+
+nav.menuPrincipal ul li a {
+  letter-spacing: 3px;
+  padding: 1.5rem 2rem;
+  border-bottom: 3px solid bisque;
+  font-size: 0.8rem;
+  color:white;
+  margin:0px 1rem;
+  color: #eeeeee;
+  background-color:$colorOscuro;
+  font-weight: 300;
+  transition: background 1s ease, color 1s ease;
+  display: block;
+}
+
+nav.menuPrincipal ul li a:hover {
+  background-color: #cccccc;
+  color: $colorOscuro;
+}
+
+/*-----main (nav, proyectos, sobreMi)-----*/
+
+main {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color:#eeeeee;
+  padding: 2rem 0rem;
+}
+
+main section.proyectos {
+  background-color:#eeeeee;
+  width: 75%;
+  padding-right: 1rem;
+  display: flex; /* le digo esta que a su vez sea clase padre */
+  flex-wrap: wrap;
+  justify-content:space-between;
+
+}
+
+
+aside.sobreMi {
+  padding: 1.7rem;
+  background-color: #cccccc;
+  width: 25%;
+}
+
+aside.sobreMi h3 {
+ font-weight: 300;
+ letter-spacing: 3px;
+ border-bottom: 1px solid darkgray;
+ padding-bottom: 0.5rem;
+}
+
+aside.sobreMi img {
+  width: 100%;
+  border-radius: 100px;
+  display: block;
+  margin:1em auto;
+  filter: unquote("grayscale(100%)");
+}
+
+aside.sobreMi p {
+  font-size: 0.9rem;
+  padding-bottom: 0.7rem;
+}
+
+aside.sobreMi a {
+  background-color: bisque;
+  border-radius: 10px;
+  color: $colorOscuro;
+  display: block;
+  margin: auto;
+  padding: 10px;
+  text-align: center;
+  transition: background 1.5s ease;
+}
+
+aside.sobreMi a:hover {
+  background-color: BurlyWood;
+}
+
+/*----- seccion proyectos -----*/
+@import "large/trabajo-large";
+
+/*----- footer -----*/
+footer{
+  padding: 2rem;
+}
+
+/*----- media queries -----*/
+@media (max-width: 960px) {
+  @import "medium/trabajo-medium";
+  @import "medium/header-medium";
+  main.container {
+    background-color: red;
+    padding: 1rem;
+  }
+
+
+  nav.menuPrincipal ul li a {
+      letter-spacing: 3px;
+      padding: 1.2rem 1.2rem;
+      border-bottom: 3px solid bisque;
+      font-size: .65rem;
+      margin: 0px 1rem;
+  }
+
+  .logo img {
+    max-width: 130px;
+  }
+
+
+  aside.sobreMi {
+      padding: 1.3rem;
+  }
+
+  aside.sobreMi h3 {
+    font-size: 1rem;
+  }
+
+  aside.sobreMi p {
+    font-size: .75rem;
+    line-height: 1rem;
+    padding-bottom: 0.7rem;
+  }
+
+  aside.sobreMi a {
+    font-size: .8em;
+  }
+}
+
+
+@media (max-width: 760px) {
+  main.container {
+    /* background-color: green; verde */
+    padding: 1rem;
+  }
+
+  header ul {
+    padding:0.5rem 0rem;
+  }
+
+  header li:first-child a  {
+   border-right: 1px solid $colorOscuro;
+   margin-right: 2rem;
+  }
+
+  header li:last-child a {
+   border-left: 1px solid $colorOscuro;
+   margin-left: 2rem;
+  }
+
+  header li:not(.logo) a {
+      padding: .7rem 0.9rem;
+  }
+
+
+  nav.menuPrincipal ul li a {
+      letter-spacing: 2px;
+      padding: .9rem .7rem;
+      border-bottom: 2px solid bisque;
+      font-size: .58rem;
+      margin: 0px 1rem;
+  }
+
+  .logo img {
+    max-width: 110px;
+  }
+
+
+  main {
+    flex-direction:column;
+  }
+
+  main section.proyectos {
+    width: 100%;
+    padding-right: 0;
+}
+
+@import "small/trabajo-small";
+
+ main aside.sobreMi {
+   width: 100%;
+   margin-top: 1rem;
+ }
+
+ aside.sobreMi h3 {
+  letter-spacing: 5px;
+  font-size: 1.3rem;
+  padding-bottom: 0.6rem;
+  text-align: center;
+ }
+
+ aside.sobreMi img {
+   width: 30%;
+   border-radius: 100px;
+   margin-right: 1.5rem;
+   filter: unquote("grayscale(100%)");
+   float: left;
+ }
+
+ aside.sobreMi p {
+   font-size: 0.8rem;
+   padding: 1.5rem;
+   /* background-color: red; */
+ }
+
+ aside.sobreMi a {
+   width: 30%;
+   padding: 10px;
+   text-align: center;
+ }
+}
